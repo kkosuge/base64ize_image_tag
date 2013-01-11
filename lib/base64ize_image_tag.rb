@@ -18,14 +18,14 @@ module Base64izeImageTag
       end
 
       private
-       def extract_path(path)
-         if path =~ /^http/
+        def extract_path(path)
+          if path =~ /^http/
             path
-         elsif path =~ /^\//
+          elsif path =~ /^\//
             File.join(Rails.root ,"/public/", path)
-         else
+          else
             File.join(Rails.root ,"/app/assets/images/", path)
-         end
+          end
         end
 
         def to_data_scheme(path)
